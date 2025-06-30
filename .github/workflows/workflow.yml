@@ -25,6 +25,7 @@ jobs:
 
       - name: Build
         run: |
+          cd lemon-app
           npm run build
 
       - name: Upload artifact
