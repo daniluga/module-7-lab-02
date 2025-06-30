@@ -1,0 +1,31 @@
+.emoji-container {
+  position: relative;
+  display: inline-block;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+}
+
+.emoji {
+  position: absolute;
+  bottom: 0;
+  font-size: 24px;
+  animation: float-up 2s ease-out forwards;
+  pointer-events: none;
+}
+
+@keyframes float-up {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-150px);
+  }
+}
