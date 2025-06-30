@@ -6,31 +6,32 @@ on:
       - master
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+  cd:
+    build:
+      runs-on: ubuntu-latest
+      permissions:
+        pages: write
+        id-token: write
+      environment:
+        name: github-pages
+        url: ${{ steps.deployment.outputs.page_url }}
+      steps:
+        - name: Checkout code
+          uses: actions/checkout@v4
 
-      - name: Install dependencies
-        run: |
-          npm ci
+        - name: Install dependencies
+          run: |
+            npm ci
 
-      - name: Build
-        run: |
-          npm run build
+        - name: Build
+          run: |
+            npm run build
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: dist
+        - name: Upload artifact
+          uses: actions/upload-pages-artifact@v3
+          with:
+            path: dist
 
-      - name: Deploy
-        id: deployment
-        uses: actions/deploy-pages@v4
+        - name: Deploy
+          id: deployment
+          uses: actions/deploy-pages@v4
