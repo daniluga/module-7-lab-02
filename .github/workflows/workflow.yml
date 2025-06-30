@@ -20,12 +20,10 @@ jobs:
 
       - name: Install dependencies
         run: |
-          cd lemon-app
           npm ci
 
       - name: Build
         run: |
-          cd lemon-app
           npm run build
 
       - name: Upload artifact
