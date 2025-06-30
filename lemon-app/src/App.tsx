@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./App.css";
-import "./EmojiButton.css";
+import "./emojiButton.css";
 
 function App() {
   type Emoji = {
